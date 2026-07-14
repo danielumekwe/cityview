@@ -197,7 +197,7 @@ export function ReservationForm() {
             className={fieldClasses}
             aria-invalid={!!errors.guests}
             aria-describedby={errors.guests ? "guests-error" : undefined}
-            {...register("guests")}
+            {...register("guests", { valueAsNumber: true })}
           />
           {errors.guests && (
             <p id="guests-error" className={errorClasses} role="alert">

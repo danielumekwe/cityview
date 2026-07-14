@@ -13,7 +13,7 @@ export const reservationSchema = z.object({
     message: "Select what you'd like to reserve",
   }),
   date: z.string().min(1, "Select a preferred date"),
-  guests: z.coerce.number({ message: "Enter number of guests" }).int().min(1, "At least 1 guest").max(500),
+  guests: z.number({ message: "Enter number of guests" }).int().min(1, "At least 1 guest").max(500),
   message: z.string().trim().max(1000).optional(),
 });
 
