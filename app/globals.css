@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette — extracted directly from the live site's generated Elementor
+     CSS (per-widget colors), which override the Astra theme's default palette. */
+  --color-primary: #d4af37; /* gold — buttons, accents, kickers */
+  --color-primary-hover: #c19a2a;
+  --color-heading: #ffffff;
+  --color-body: #b3b3b3; /* secondary/description text on dark sections */
+  --color-surface: #000000; /* base page background */
+  --color-surface-elevated: #131313; /* cards, slightly lifted off pure black */
+  --color-border: rgba(255, 255, 255, 0.12);
+  --background: var(--color-surface);
+  --foreground: var(--color-body);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-heading: var(--color-heading);
+  --color-body: var(--color-body);
+  --color-surface: var(--color-surface);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-border: var(--color-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-roboto);
+  --font-serif: var(--font-playfair);
+  --font-nav: var(--font-allerta);
+  --font-display: var(--font-cinzel);
+  --font-kicker: var(--font-montserrat);
+  --font-hero-body: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+}
+
+/* Visible focus states for keyboard navigation (accessibility baseline) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
