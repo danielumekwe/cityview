@@ -6,6 +6,7 @@ import { CTABand } from "@/components/sections/CTABand";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ContactMap } from "@/components/sections/ContactMap";
 import { servicesSection } from "@/content/home";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
 export const metadata: Metadata = {
   title: "Home – Cityview Bar & Lodge",
@@ -14,14 +15,20 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Home() {
+export default async function Home() {
+  const liveReviews = await getGoogleReviews();
+
   return (
     <>
       <Hero />
       <ServiceGrid id="services" kicker={servicesSection.kicker} title={servicesSection.title} />
       <AmenityRow />
       <CTABand />
-      <TestimonialsSection />
+      <TestimonialsSection
+        testimonials={liveReviews?.testimonials}
+        rating={liveReviews?.rating}
+        totalReviews={liveReviews?.totalReviews}
+      />
       <ContactMap />
     </>
   );

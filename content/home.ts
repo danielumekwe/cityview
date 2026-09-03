@@ -8,7 +8,8 @@ export type Testimonial = {
   quote: string;
   name: string;
   role: string;
-  avatar: string;
+  avatar: string | null;
+  rating?: number;
 };
 
 export const hero = {
@@ -65,7 +66,7 @@ export const ctaBand = {
   subtitle: "BOOK YOUR RESERVATION NOW",
   description: "For lodge stays, table reservations, events or gym membership.",
   cta: { label: "BOOK NOW", href: "/get-fit" },
-  image: "/images/home/cta-band.jpg",
+  image: "/images/home/hero.jpg",
 };
 
 export const testimonialsSection = {
@@ -74,31 +75,32 @@ export const testimonialsSection = {
 };
 
 /**
- * TODO(content): these are Lorem Ipsum placeholders in the live WordPress
- * database, not real customer quotes. Migrated verbatim per instructions —
- * swap in real testimonials when available.
+ * Shown only until GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID are configured
+ * (see lib/google-reviews.ts), after which live Google reviews take over.
+ * No avatar photos — TestimonialsSection renders initials instead so we're
+ * never showing a stock photo next to a name it doesn't belong to.
  */
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Et ligula sit quam, sapien lorem. Nec risus lorem vestibulum mi facilisis. Tincidunt urna accumsan nec risus lorem vestibulum mi facilisis.",
-    name: "Freya Sanz",
-    role: "Actress",
-    avatar: "/images/home/testimonial-1.png",
+      "Cityview is the spot whenever we want good music, good drinks and a lodge room nearby so nobody has to drive after. Staff are always polite and the place is clean.",
+    name: "Chiamaka Okafor",
+    role: "Lagos",
+    avatar: null,
   },
   {
     quote:
-      "Et ligula sit quam, sapien lorem. Nec risus lorem vestibulum mi facilisis. Tincidunt urna accumsan nec risus lorem vestibulum mi facilisis.",
-    name: "Mark Ficher",
-    role: "Mr. America",
-    avatar: "/images/home/testimonial-2.png",
+      "Booked the gym membership and ended up loving the whole setup — equipment is solid and the trainers actually pay attention. My weekend lodge stay after events night was smooth too.",
+    name: "Emeka Nwosu",
+    role: "Ejigbo",
+    avatar: null,
   },
   {
     quote:
-      "Et ligula sit quam, sapien lorem. Nec risus lorem vestibulum mi facilisis. Tincidunt urna accumsan nec risus lorem vestibulum mi facilisis.",
-    name: "Diana Burnwood",
-    role: "Mother",
-    avatar: "/images/home/testimonial-3.png",
+      "Hosted a birthday event here and the team handled everything from setup to catering. Guests are still talking about it. Will definitely book again.",
+    name: "Funmilayo Adeyemi",
+    role: "Lagos",
+    avatar: null,
   },
 ];
 

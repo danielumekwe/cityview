@@ -6,9 +6,12 @@ export type ServiceCard = {
   image: string;
 };
 
-// Real copy + real photos from the live site's icon-box widgets (Bar & Lounge /
-// Night Club / Gym & Fitness / Events & Parties block). This exact card set is
-// reused verbatim on both the Home and About us pages in the live site.
+// Real copy for the icon-box widgets (Bar & Lounge / Night Club / Gym & Fitness /
+// Events & Parties block), reused verbatim on both the Home and About us pages
+// in the live site. Images are actual Cityview venue photos already used on the
+// respective detail pages (bar-and-lodge.ts, night-club.ts, gym-and-fitness.ts,
+// event-and-parties.ts) — not the generic stock photography this card set
+// previously shipped with.
 export const services: ServiceCard[] = [
   {
     title: "Bar & Lounge",
@@ -16,7 +19,7 @@ export const services: ServiceCard[] = [
       "Signature cocktails, premium drinks, good music and a classy atmosphere to relax and unwind.",
     href: "/bar-and-lodge",
     icon: "martini",
-    image: "/images/shared/service-bar.avif",
+    image: "/images/bar-and-lodge/bar-1.jpg",
   },
   {
     title: "Night Club",
@@ -24,7 +27,7 @@ export const services: ServiceCard[] = [
       "Top DJs, lights, energy and the hottest nightlife experience for unforgettable nights.",
     href: "/night-club",
     icon: "music",
-    image: "/images/shared/service-nightclub.avif",
+    image: "/images/bar-and-lodge/bar-2.jpg",
   },
   {
     title: "Gym & Fitness",
@@ -32,7 +35,7 @@ export const services: ServiceCard[] = [
       "Modern fitness equipment, personal training and wellness programs for everyone.",
     href: "/gym-and-fitness",
     icon: "dumbbell",
-    image: "/images/shared/service-gym.avif",
+    image: "/images/gym-and-fitness/hero.jpg",
   },
   {
     title: "Events & Parties",
@@ -40,6 +43,6 @@ export const services: ServiceCard[] = [
       "From birthdays to corporate events, we create beautiful memories in a premium setting.",
     href: "/event-and-parties",
     icon: "calendar",
-    image: "/images/shared/service-events.avif",
+    image: "/images/event-and-parties/hero.jpg",
   },
 ];
